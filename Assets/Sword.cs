@@ -4,6 +4,7 @@ public class Sword : MonoBehaviour
 {
     public float knockbackForce = 10f; // 넉백 힘
     public GameObject knockbackObject; // 넉백을 받을 오브젝트
+    public GameObject prefabToSpawn;
 
     void Update()
     {
@@ -27,6 +28,10 @@ public class Sword : MonoBehaviour
             {
                 // 'parrying' 태그를 가진 오브젝트와 충돌했을 때 실행할 코드
                 Knockback(collider.gameObject);
+                Vector3 spawnPosition = transform.position;
+
+                // 부딪힌 위치에 프리팹 소환
+                SpawnPrefab(spawnPosition);
             }
         }
     }
@@ -41,5 +46,11 @@ public class Sword : MonoBehaviour
             knockbackDirection.y = 0; // y 방향은 0으로 설정하여 x와 z 방향만으로 넉백 발생
             knockbackRigidbody.AddForce(knockbackDirection * knockbackForce, ForceMode.Impulse);
         }
+    }
+    void SpawnPrefab(Vector3 position)
+    {
+        // 프리팹을 복제해서 소환
+        GameObject spawnedPrefab = Instantiate(prefabToSpawn, position, Quaternion.identity);
+        // 여기서는 Quaternion.identity를 사용하여 회전을 적용하지 않음
     }
 }
