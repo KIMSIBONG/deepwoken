@@ -388,6 +388,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &762004450 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4459864850019384750, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
+  m_PrefabInstance: {fileID: 1490410839}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &762004456 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4459864850019384738, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
@@ -629,6 +634,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05cec015264900f46ac8d60c3add066f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AttackNumber: 0
 --- !u!1 &2079920018
 GameObject:
   m_ObjectHideFlags: 0
@@ -855,5 +861,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   knockbackForce: 20
-  knockbackObject: {fileID: 0}
+  knockbackObject: {fileID: 762004450}
   particlePrefab: {fileID: 8443315704496310910, guid: 6ef35fa36e3a65043b2d800600204bdd, type: 3}
