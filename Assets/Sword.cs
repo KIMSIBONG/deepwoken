@@ -19,7 +19,15 @@ public class Sword : MonoBehaviour
     void Attack()
     {
         // 현재 오브젝트의 위치를 기준으로 'parrying' 태그를 가진 오브젝트 검사
-        Collider[] colliders = Physics.OverlapSphere(transform.position, 0.25f); // 반경 1 내의 모든 콜라이더 검사
+        float radius = 0.25f; // 캡슐의 반지름
+        float height = 1.5f; // 캡슐의 높이
+
+        // 캡슐의 시작점과 끝점을 계산
+        Vector3 startPoint = transform.position + new Vector3(0, height / 2f, 0);
+        Vector3 endPoint = transform.position - new Vector3(0, height / 2f, 0);
+
+        // Physics.OverlapCapsule을 사용하여 캡슐 형태의 충돌체 검출
+        Collider[] colliders = Physics.OverlapCapsule(startPoint, endPoint, radius);
 
         foreach (var collider in colliders)
         {
