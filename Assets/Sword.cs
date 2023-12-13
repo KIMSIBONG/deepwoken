@@ -4,7 +4,7 @@ public class Sword : MonoBehaviour
 {
     public float knockbackForce = 10f; // 넉백 힘
     public GameObject knockbackObject; // 넉백을 받을 오브젝트
-    public GameObject prefabToSpawn;
+    public GameObject particle;
 
     void Update()
     {
@@ -31,7 +31,7 @@ public class Sword : MonoBehaviour
                 Vector3 spawnPosition = transform.position;
 
                 // 부딪힌 위치에 프리팹 소환
-                SpawnPrefab(spawnPosition);
+                ParryEffect(spawnPosition);
             }
         }
     }
@@ -47,10 +47,10 @@ public class Sword : MonoBehaviour
             knockbackRigidbody.AddForce(knockbackDirection * knockbackForce, ForceMode.Impulse);
         }
     }
-    void SpawnPrefab(Vector3 position)
+    void ParryEffect(Vector3 position)
     {
         // 프리팹을 복제해서 소환
-        GameObject spawnedPrefab = Instantiate(prefabToSpawn, position, Quaternion.identity);
+        GameObject spawnedPrefab = Instantiate(particle, position, Quaternion.identity);
         // 여기서는 Quaternion.identity를 사용하여 회전을 적용하지 않음
     }
 }
