@@ -5,21 +5,26 @@ public class Monsterattack : MonoBehaviour
     public float knockbackForce = 10f; // 넉백 힘
     public GameObject knockbackObject; // 넉백을 받을 오브젝트
     public GameObject particlePrefab; // 파티클 프리팹
+    private float lastClickTime = 0f;
+    public float mouseCooldown = 1f;
+
 
     void Update()
     {
+        float currentTime = Time.time;
         // 마우스 왼쪽 버튼 클릭 감지
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && (currentTime - lastClickTime) >= mouseCooldown)
         {
             // attack 함수 실행
             Attack();
+            lastClickTime = currentTime;
         }
     }
 
     void Attack()
     {
         // 현재 오브젝트의 위치를 기준으로 'parrying' 태그를 가진 오브젝트 검사
-        float radius = 0.15f; // 구의 반지름 (크기의 반값)
+        float radius = 0.5f; // 구의 반지름 (크기의 반값)
         Debug.Log("attack");
         // Physics.OverlapSphere을 사용하여 구 형태의 충돌체 검출
         Collider[] colliders = Physics.OverlapSphere(transform.position, radius);
@@ -57,4 +62,3 @@ public class Monsterattack : MonoBehaviour
         // 여기서는 Quaternion.identity를 사용하여 회전을 적용하지 않음
     }
 }
-    
