@@ -21,6 +21,9 @@ public class PlayerAnimation : MonoBehaviour
             // 예를 들어, 마우스 클릭을 누르면 "Attack" 애니메이션을 재생
             if (Input.GetMouseButtonDown(0))
             {
+                // 현재 실행 중인 모든 애니메이션을 멈춤
+                animator.speed = 0f;
+                
                 // "Attack" 애니메이션을 재생
                 animator.SetTrigger("Attack");
 
@@ -30,28 +33,62 @@ public class PlayerAnimation : MonoBehaviour
 
                 // 마지막 클릭 시간 갱신
                 lastClickTime = Time.time;
+
+                // 애니메이션을 재생하고 나서 다시 정상 속도로 변경
+                animator.speed = 1f;
             }
         }
 
         if (Input.GetKeyDown(KeyCode.F))
         {
+            // 현재 실행 중인 모든 애니메이션을 멈춤
+            animator.speed = 0f;
+
             animator.SetTrigger("Parrying");
+
+            // 애니메이션을 재생하고 나서 다시 정상 속도로 변경
+            animator.speed = 1f;
         }
         if (Input.GetKeyDown(KeyCode.W))
         {
-            animator.SetTrigger("Walk");
+            // 현재 실행 중인 모든 애니메이션을 멈춤
+            animator.speed = 0f;
+
+            animator.SetTrigger("Run");
+
+            // 애니메이션을 재생하고 나서 다시 정상 속도로 변경
+            animator.speed = 1f;
         }
         if (Input.GetKeyDown(KeyCode.A))
         {
+            // 현재 실행 중인 모든 애니메이션을 멈춤
+            animator.speed = 0f;
+
             animator.SetTrigger("Sideright");
+
+            // 애니메이션을 재생하고 나서 다시 정상 속도로 변경
+            animator.speed = 1f;
         }
         if (Input.GetKeyDown(KeyCode.S))
         {
+            // 현재 실행 중인 모든 애니메이션을 멈춤
+            animator.speed = 0f;
+
             animator.SetTrigger("Walk");
+
+            // 애니메이션을 재생하고 나서 다시 정상 속도로 변경
+            animator.speed = 1f;
         }
         if (Input.GetKeyDown(KeyCode.D))
         {
+            // 현재 실행 중인 모든 애니메이션을 멈춤
+            animator.speed = 0f;
+
             animator.SetTrigger("Sideright");
+
+            // 애니메이션을 재생하고 나서 다시 정상 속도로 변경
+            animator.speed = 1f;
         }
+
     }
 }
