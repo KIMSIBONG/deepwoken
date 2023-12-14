@@ -16,6 +16,8 @@ using UnityEngine.UI;
 
 public class FirstPersonController : MonoBehaviour
 {
+    public float spawnDistance = 2f;
+    public GameObject attackhitbox;
     private bool canMove = true;
     private Rigidbody rb;
     bool isCursorLocked = true;
@@ -211,6 +213,7 @@ public class FirstPersonController : MonoBehaviour
         {
             // walkSpeed를 0으로 설정
             walkSpeed = 0f;
+            SpawnPrefabInFrontOfObject();
 
             // 1초 후에 움직임 가능 여부를 활성화하고 walkSpeed를 다시 5f로 설정하는 함수 호출
             StartCoroutine(DisableMovementForOneSecond());
@@ -524,6 +527,14 @@ public class FirstPersonController : MonoBehaviour
         {
             Crouch();
         }
+    }
+    void SpawnPrefabInFrontOfObject()
+    {
+        // 스크립트가 적용된 오브젝트의 위치와 방향을 가져옴
+        Vector3 spawnPosition = transform.position + transform.forward * spawnDistance;
+
+        // 오브젝트의 앞에 프리팹 소환
+        Instantiate(attackhitbox, spawnPosition, transform.rotation);
     }
 
     private void Crouch()
