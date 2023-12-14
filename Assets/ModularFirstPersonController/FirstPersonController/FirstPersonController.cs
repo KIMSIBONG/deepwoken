@@ -16,6 +16,7 @@ using UnityEngine.UI;
 
 public class FirstPersonController : MonoBehaviour
 {
+    private bool canMove = true;
     private Rigidbody rb;
     bool isCursorLocked = true;
     float rotationX = 0;
@@ -206,6 +207,14 @@ public class FirstPersonController : MonoBehaviour
 
     private void Update()
     {
+        if (Input.GetMouseButtonDown(0) && canMove)
+        {
+            // walkSpeed를 0으로 설정
+            walkSpeed = 0f;
+
+            // 1초 후에 움직임 가능 여부를 활성화하고 walkSpeed를 다시 5f로 설정하는 함수 호출
+            StartCoroutine(DisableMovementForOneSecond());
+        }
         #region Camera
 
         // Control camera movement
@@ -473,7 +482,16 @@ public class FirstPersonController : MonoBehaviour
 
         #endregion
     }
+    IEnumerator DisableMovementForOneSecond()
+    {
+        canMove = false;  // 움직임을 비활성화
 
+        yield return new WaitForSeconds(1f);  // 1초 대기
+
+        // 움직임을 다시 활성화하고 walkSpeed를 5f로 설정
+        canMove = true;
+        walkSpeed = 5f;
+    }
     // Sets isGrounded based on a raycast sent straigth down from the player object
     private void CheckGround()
     {
@@ -802,6 +820,7 @@ public class FirstPersonController : MonoBehaviour
             SerFPC.ApplyModifiedProperties();
         }
     }
+
 
 }
 
