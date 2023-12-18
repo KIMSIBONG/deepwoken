@@ -19,10 +19,9 @@ public class Idlestate : StateMachineBehaviour
     {
         if (Vector3.Distance(enemyTransform.position, enemy.player.position) <= 7)
             animator.SetBool("IsFollow", true);
-            enemyTransform.LookAt(player);
+            
 
-        if (enemy.atkDelay <= 0)
-        animator.SetTrigger("AttackState");
+        
         
     }
 

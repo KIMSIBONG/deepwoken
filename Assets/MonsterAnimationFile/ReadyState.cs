@@ -17,9 +17,9 @@ public class ReadyState : StateMachineBehaviour
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         if(enemy.atkDelay<=0)
-        animator.SetTrigger("IsAttack");
+            animator.SetTrigger("IsAttack");
         if (Vector3.Distance(enemy.player.position, enemyTransform.position) > 1f)
-        animator.SetBool("IsFollow", true);
+            animator.SetBool("IsFollow", true);
 
         
     }

@@ -7,16 +7,17 @@ public class Enemy : MonoBehaviour
     
     public Transform player;
     public float speed;
-    public Vector3 home;
+    
     public float atkCooltime = 4;
     public float atkDelay;
+    public bool MonsterFollow = false;
 
     // Start is called before the first frame update
     void Start()
     {
 
         player = GameObject.FindGameObjectWithTag("Player").transform;
-        home = transform.position;
+        
 
     }
 
@@ -25,7 +26,9 @@ public class Enemy : MonoBehaviour
     {
         if(atkDelay>=0)
             atkDelay -= Time.deltaTime;
-        
+        if (player != null)
+            transform.LookAt(player);
+
     }
     
     
