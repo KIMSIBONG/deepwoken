@@ -17,7 +17,7 @@ public class FollowState : StateMachineBehaviour
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         
-        if (Vector3.Distance(enemy.player.position, enemyTransform.position) > 1f)
+        if (Vector3.Distance(enemy.player.position, enemyTransform.position) > 2f)
         enemyTransform.position = Vector3.MoveTowards(enemyTransform.position, enemy.player.position, Time.deltaTime * enemy.speed);
         else
         {

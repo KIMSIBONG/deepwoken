@@ -18,7 +18,7 @@ public class ReadyState : StateMachineBehaviour
     {
         if(enemy.atkDelay<=0)
             animator.SetTrigger("IsAttack");
-        if (Vector3.Distance(enemy.player.position, enemyTransform.position) > 1f)
+        if (Vector3.Distance(enemy.player.position, enemyTransform.position) > 2f)
             animator.SetBool("IsFollow", true);
 
         

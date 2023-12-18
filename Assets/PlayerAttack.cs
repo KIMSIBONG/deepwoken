@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Monsterattack : MonoBehaviour
+public class PlayerAttack : MonoBehaviour
 {
     public float knockbackForce = 10f; // 넉백 힘
     public GameObject knockbackObject; // 넉백을 받을 오브젝트
@@ -38,7 +38,7 @@ public class Monsterattack : MonoBehaviour
                 Knockback(collider.gameObject);
 
                 // 부딪힌 위치에 프리팹 소환
-                
+                ParryEffect(collider.ClosestPoint(transform.position));
             }
         }
     }
@@ -55,5 +55,10 @@ public class Monsterattack : MonoBehaviour
             knockbackRigidbody.AddForce(knockbackDirection * knockbackForce, ForceMode.Impulse);
         }
     }
-    
+    void ParryEffect(Vector3 position)
+    {
+        // 프리팹을 복제해서 소환
+        GameObject spawnedPrefab = Instantiate(particlePrefab, position, Quaternion.identity);
+        // 여기서는 Quaternion.identity를 사용하여 회전을 적용하지 않음
+    }
 }
