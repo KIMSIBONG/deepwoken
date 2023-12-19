@@ -15,30 +15,17 @@ public class PlayerAttack : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && Time.time - lastClickTime > clickCooldown)
         {
             lastClickTime = Time.time;
-            Attack();
+
+            
         }
     }
 
-    private void Attack()
+    private void AttackDamage()
     {
         // 구 형태의 콜라이더 충돌 여부 체크
-        Collider[] hitColliders = Physics.OverlapSphere(transform.position, sphereRadius);
-
-        foreach (Collider collider in hitColliders)
-        {
-            // parrying 태그를 가진 오브젝트와 충돌 시
-            if (collider.CompareTag("parrying"))
-            {
-                Instantiate(particlePrefab, collider.transform.position, Quaternion.identity);
-                KnockBack(collider.gameObject);
-            }
-
-            // Enemy 태그를 가진 오브젝트와 충돌 시
-            if (collider.CompareTag("Enemy"))
-            {
-                Debug.Log("Damage");
-            }
-        }
+        Debug.Log("Damage");
+        
+        
     }
 
     private void KnockBack(GameObject obj)

@@ -4,12 +4,14 @@ using UnityEngine;
 public class PlayerAnimation : MonoBehaviour
 {
     private Animator animator;
+    public float clickCooldown = 1f;
     private float lastClickTime; // 마지막 클릭 시간 기록
     private float lastParryTime;
-    public float clickCooldown = 3f; // 클릭 쿨타임 설정 (초)
+     // 클릭 쿨타임 설정 (초)
     public float parryCooldown = 1f;
     public GameObject parryObject;
     public float destroyDelay = 0.5f;
+   
     void Start()
     {
         // Animator 컴포넌트 가져오기
