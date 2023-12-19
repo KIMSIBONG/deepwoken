@@ -7,7 +7,8 @@ public class PlayerAnimation : MonoBehaviour
     private float lastClickTime; // 마지막 클릭 시간 기록
     private float lastParryTime;
     public float clickCooldown = 3f; // 클릭 쿨타임 설정 (초)
-    public float parryCooldown = 5f;
+    public float parryCooldown = 1f;
+    public GameObject parryObject;
     void Start()
     {
         // Animator 컴포넌트 가져오기
@@ -47,7 +48,7 @@ public class PlayerAnimation : MonoBehaviour
                 StopAllAnimations();
 
                 animator.SetTrigger("Parrying");
-
+                SpawnPrefab();
                 lastParryTime = Time.time;
             }
             // 현재 실행 중인 모든 애니메이션을 멈춤
@@ -105,5 +106,14 @@ public class PlayerAnimation : MonoBehaviour
         animator.ResetTrigger("SideStep");
         animator.ResetTrigger("Walk");
         // 다른 애니메이션 트리거도 필요에 따라 추가
+    }
+    void SpawnPrefab()
+    {
+        // 플레이어의 현재 위치와 앞 방향으로 프리팹 소환
+        Vector3 spawnPosition = transform.position + transform.forward * 2f;  // 예시로 2f만큼 앞으로 이동
+        Quaternion spawnRotation = transform.rotation;
+
+        // 프리팹을 소환
+        Instantiate(parryObject, spawnPosition, spawnRotation);
     }
 }

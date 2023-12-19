@@ -135,8 +135,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05cec015264900f46ac8d60c3add066f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lastClickTime: 0
+  lastParryTime: 0
   clickCooldown: 1.5
   parryCooldown: 5
+  parryObject: {fileID: 0}
 --- !u!1 &697002497 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100078, guid: 5a35c5f0a89b9654d897ccd7c8f81bd0, type: 3}
@@ -175,18 +178,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &697002505
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 697002497}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e76e88cafde16344590b31c59f9711de, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -293,7 +284,6 @@ GameObject:
   - component: {fileID: 1068938366}
   - component: {fileID: 1068938365}
   - component: {fileID: 1068938364}
-  - component: {fileID: 1068938368}
   m_Layer: 0
   m_Name: Plane
   m_TagString: Untagged
@@ -380,18 +370,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1068938368
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1068938363}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2885916c725cbcb4a96bef1cfd57a3e3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1630986258
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -970,18 +948,6 @@ PrefabInstance:
       objectReference: {fileID: 9100000, guid: ff34e484b9aa7284c80dbf24d41a21d0, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5a35c5f0a89b9654d897ccd7c8f81bd0, type: 3}
---- !u!114 &1881943993
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1949429843139958}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e76e88cafde16344590b31c59f9711de, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2094085715
 GameObject:
   m_ObjectHideFlags: 0
@@ -4861,7 +4827,6 @@ GameObject:
   - component: {fileID: 4394185853162162}
   - component: {fileID: 95549024993684406}
   - component: {fileID: 691393038}
-  - component: {fileID: 1881943993}
   m_Layer: 0
   m_Name: Crusader tank_prefab
   m_TagString: Untagged
@@ -14319,7 +14284,6 @@ GameObject:
   - component: {fileID: 4459864851492249846}
   - component: {fileID: 4459864851492249842}
   - component: {fileID: 4459864851492249843}
-  - component: {fileID: 4459864851492249850}
   m_Layer: 0
   m_Name: FirstPersonController
   m_TagString: Player
@@ -14327,15 +14291,3 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &4459864851492249850
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4459864851492249849}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 768e5d4c5ea940e4f984de0f0f652565, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
