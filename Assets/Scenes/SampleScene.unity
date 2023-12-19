@@ -2559,6 +2559,7 @@ GameObject:
   - component: {fileID: 4528263033278338}
   - component: {fileID: 137655742166684618}
   - component: {fileID: 137655742166684620}
+  - component: {fileID: 137655742166684621}
   m_Layer: 0
   m_Name: Hitweapon
   m_TagString: Untagged
@@ -11491,6 +11492,19 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &137655742166684621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1396151297303668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 851272bee3b552e478746d2cd80f1be8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetCollider: {fileID: 137655742166684620}
 --- !u!137 &137708273974820544
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
