@@ -1,31 +1,41 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class WeaponCollider : MonoBehaviour
 {
-    private Animator animator;
-    public Collider targetCollider; // 따라가야 할 콜라이더
+    private SkinnedMeshRenderer meshRenderer;
+    private MeshCollider collider;
+    private float updateTime = 0.1f; // 업데이트 간격
+    private float timer = 0f;
 
-    private void Start()
+    void Start()
     {
-        animator = GetComponent<Animator>();
+        meshRenderer = GetComponent<SkinnedMeshRenderer>();
+        collider = GetComponent<MeshCollider>();
 
-        // 애니메이션 이벤트 등록
-        AnimationEvent animationEvent = new AnimationEvent();
-        animationEvent.functionName = "UpdateColliderPosition";
-        animationEvent.time = 0.5f; // 이벤트가 발생할 애니메이션 시간
-
-        AnimationClip animationClip = animator.runtimeAnimatorController.animationClips[0]; // 애니메이션 클립 가져오기
-        animationClip.AddEvent(animationEvent); // 애니메이션 클립에 이벤트 추가
+        if (collider == null)
+        {
+            Debug.LogError("MeshCollider component not found on this GameObject.");
+            enabled = false; // 스크립트 비활성화
+        }
     }
 
-    // 애니메이션 이벤트에서 호출할 메서드
-    private void UpdateColliderPosition()
+    void Update()
     {
-        if (targetCollider != null)
+        timer += Time.deltaTime;
+
+        if (timer >= updateTime)
         {
-            // 콜라이더의 위치와 회전을 애니메이션에 맞게 업데이트
-            transform.position = targetCollider.transform.position;
-            transform.rotation = targetCollider.transform.rotation;
+            timer = 0f;
+            UpdateCollider();
         }
+    }
+
+    void UpdateCollider()
+    {
+        Mesh colliderMesh = new Mesh();
+        meshRenderer.BakeMesh(colliderMesh);
+        collider.sharedMesh = colliderMesh;
     }
 }
