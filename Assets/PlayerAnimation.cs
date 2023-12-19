@@ -9,6 +9,7 @@ public class PlayerAnimation : MonoBehaviour
     public float clickCooldown = 3f; // 클릭 쿨타임 설정 (초)
     public float parryCooldown = 1f;
     public GameObject parryObject;
+    public float destroyDelay = 0.5f;
     void Start()
     {
         // Animator 컴포넌트 가져오기
@@ -110,10 +111,13 @@ public class PlayerAnimation : MonoBehaviour
     void SpawnPrefab()
     {
         // 플레이어의 현재 위치와 앞 방향으로 프리팹 소환
-        Vector3 spawnPosition = transform.position + transform.forward * 2f;  // 예시로 2f만큼 앞으로 이동
+        Vector3 spawnPosition = transform.position + transform.forward * 1f;  // 예시로 2f만큼 앞으로 이동
         Quaternion spawnRotation = transform.rotation;
 
         // 프리팹을 소환
-        Instantiate(parryObject, spawnPosition, spawnRotation);
+        GameObject spawnedObject = Instantiate(parryObject, spawnPosition, spawnRotation);
+
+        // 일정 시간이 지난 후에 생성된 오브젝트를 파괴
+        Destroy(spawnedObject, destroyDelay);
     }
 }
