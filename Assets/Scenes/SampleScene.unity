@@ -1462,7 +1462,6 @@ GameObject:
   - component: {fileID: 4515474086291704}
   - component: {fileID: 137938693126024904}
   - component: {fileID: 137938693126024906}
-  - component: {fileID: 137938693126024905}
   m_Layer: 0
   m_Name: Shield
   m_TagString: Untagged
@@ -13304,18 +13303,6 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.6481734, y: 0.19451882, z: -0.07556455}
     m_Extent: {x: 0.22360392, y: 0.3688935, z: 0.4631961}
   m_DirtyAABB: 0
---- !u!114 &137938693126024905
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1120709326858198}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 768e5d4c5ea940e4f984de0f0f652565, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &137938693126024906
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14332,6 +14319,7 @@ GameObject:
   - component: {fileID: 4459864851492249846}
   - component: {fileID: 4459864851492249842}
   - component: {fileID: 4459864851492249843}
+  - component: {fileID: 4459864851492249850}
   m_Layer: 0
   m_Name: FirstPersonController
   m_TagString: Player
@@ -14339,3 +14327,15 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &4459864851492249850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4459864851492249849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 768e5d4c5ea940e4f984de0f0f652565, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
