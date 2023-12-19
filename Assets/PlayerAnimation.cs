@@ -58,7 +58,7 @@ public class PlayerAnimation : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.D))
         {
             // 현재 실행 중인 모든 애니메이션을 멈춤
-
+            StopAllAnimations();
 
             animator.SetTrigger("SideStep");
         }
@@ -71,15 +71,15 @@ public class PlayerAnimation : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.W))
         {
-            // 현재 실행 중인 모든 애니메이션을 멈춤
-
+            // 현재 실행 중인 모든 애니;메이션을 멈춤
+            StopAllAnimations();
 
             animator.SetTrigger("Run");
         }
         if (Input.GetKeyDown(KeyCode.A))
         {
             // 현재 실행 중인 모든 애니메이션을 멈춤
-
+            StopAllAnimations();
 
             animator.SetTrigger("SideStep");
         }
