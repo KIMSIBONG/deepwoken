@@ -34,6 +34,10 @@ public class PlayerHP : MonoBehaviour
             pcurHp -= 10;
         }
         pHandleHp();
+        if (pcurHp <= 0)
+        {
+            SceneManager.LoadScene("Stage2");
+        }
     }
     
     private void pHandleHp()
