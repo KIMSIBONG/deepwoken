@@ -4831,7 +4831,6 @@ GameObject:
   - component: {fileID: 95549024993684406}
   - component: {fileID: 691393038}
   - component: {fileID: 95549024993684407}
-  - component: {fileID: 95549024993684408}
   m_Layer: 0
   m_Name: Crusader tank_prefab
   m_TagString: Untagged
@@ -8986,21 +8985,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clickCooldown: 1
-  sphereRadius: 0.5
-  particlePrefab: {fileID: 8443315704496310910, guid: 6ef35fa36e3a65043b2d800600204bdd, type: 3}
+  Candamageobject: {fileID: 6477927192747382177, guid: 9c5b5d336d166504c9eb098901619c8b, type: 3}
+  destroyDelay: 0.2
   knockbackForce: 2
---- !u!114 &95549024993684408
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1949429843139958}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 851272bee3b552e478746d2cd80f1be8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!137 &137133149394159798
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
@@ -13684,63 +13671,6 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.69480145, y: 0.11291133, z: 0.18810649}
     m_Extent: {x: 0.04945013, y: 0.069662854, z: 0.03124097}
   m_DirtyAABB: 0
---- !u!1001 &2215016002318087873
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 3278105339596099627, guid: 217f4ad317af65e4c93138ed47c3579e, type: 3}
-      propertyPath: m_Name
-      value: Cube
-      objectReference: {fileID: 0}
-    - target: {fileID: 3842080520742003424, guid: 217f4ad317af65e4c93138ed47c3579e, type: 3}
-      propertyPath: m_RootOrder
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 3842080520742003424, guid: 217f4ad317af65e4c93138ed47c3579e, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 4.5547733
-      objectReference: {fileID: 0}
-    - target: {fileID: 3842080520742003424, guid: 217f4ad317af65e4c93138ed47c3579e, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -2.4241853
-      objectReference: {fileID: 0}
-    - target: {fileID: 3842080520742003424, guid: 217f4ad317af65e4c93138ed47c3579e, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -35.91818
-      objectReference: {fileID: 0}
-    - target: {fileID: 3842080520742003424, guid: 217f4ad317af65e4c93138ed47c3579e, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3842080520742003424, guid: 217f4ad317af65e4c93138ed47c3579e, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3842080520742003424, guid: 217f4ad317af65e4c93138ed47c3579e, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3842080520742003424, guid: 217f4ad317af65e4c93138ed47c3579e, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3842080520742003424, guid: 217f4ad317af65e4c93138ed47c3579e, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3842080520742003424, guid: 217f4ad317af65e4c93138ed47c3579e, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3842080520742003424, guid: 217f4ad317af65e4c93138ed47c3579e, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 217f4ad317af65e4c93138ed47c3579e, type: 3}
 --- !u!224 &4459864849635516012
 RectTransform:
   m_ObjectHideFlags: 0
