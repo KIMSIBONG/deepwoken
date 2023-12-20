@@ -35,7 +35,7 @@ public class PlayerAttack : MonoBehaviour
         knockbackDirection.y = 0;
         obj.GetComponent<Rigidbody>().AddForce(knockbackDirection.normalized * knockbackForce, ForceMode.Impulse);
     }
-    void SpawnPrefabAtPlayer()
+    void Candamage()
     {
         // 플레이어의 현재 위치를 얻어옵니다.
         Vector3 playerPosition = transform.position;

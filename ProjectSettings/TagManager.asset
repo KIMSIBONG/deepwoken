@@ -6,6 +6,7 @@ TagManager:
   tags:
   - parrying
   - Enemy
+  - PlayerAttack
   layers:
   - Default
   - TransparentFX
