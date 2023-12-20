@@ -1,14 +1,23 @@
 using UnityEngine;
-
+using System;
 public class PlayerAttack : MonoBehaviour
 {
     public float clickCooldown = 1f;  // 클릭 쿨다운 시간
     
     private float lastClickTime;       // 마지막 클릭 시간
     public GameObject Candamageobject;
-    public float destroyDelay = 0.2f;
+    public float destroyDelay = 0.1f;
     public float knockbackForce = 2f;  // KnockBack에 가해질 힘
+    public GameObject knockbackEnemy;
+    public static Action knock;
+    private void Awake()
+    {
+        knock = () =>
+        {
+            KnockBack();
+        };
 
+    }
     private void Update()
     {
         // 마우스 왼쪽 버튼 클릭 감지
@@ -28,12 +37,12 @@ public class PlayerAttack : MonoBehaviour
         
     }
 
-    private void KnockBack(GameObject obj)
+    private void KnockBack()
     {
         // KnockBack 오브젝트가 뒤로 밀리게 설정
-        Vector3 knockbackDirection = transform.position - obj.transform.position;
+        Vector3 knockbackDirection = transform.position - knockbackEnemy.transform.position;
         knockbackDirection.y = 0;
-        obj.GetComponent<Rigidbody>().AddForce(knockbackDirection.normalized * knockbackForce, ForceMode.Impulse);
+        knockbackEnemy.GetComponent<Rigidbody>().AddForce(knockbackDirection.normalized * knockbackForce, ForceMode.Impulse);
     }
     void Candamage()
     {

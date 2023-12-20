@@ -6,7 +6,7 @@ public class Monsterattack : MonoBehaviour
 
     private float lastClickTime;       // 마지막 클릭 시간
     public GameObject Candamageobject;
-    public float destroyDelay = 0.2f;
+    public float destroyDelay = 0.1f;
     public float knockbackForce = 2f;  // KnockBack에 가해질 힘
 
     private void Update()
