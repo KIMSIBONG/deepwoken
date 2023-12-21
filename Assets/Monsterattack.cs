@@ -18,7 +18,7 @@ public class Monsterattack : MonoBehaviour
     private void Attackplayer()
     {
         // 구 형태의 콜라이더 충돌 여부 체크
-        Debug.Log("Player");
+        
         mCandamage();
 
     }
