@@ -50,7 +50,7 @@ public class PlayerAttack : MonoBehaviour
         Vector3 playerPosition = transform.position;
 
         // 플레이어 앞쪽에 프리팹을 생성하되, Y 좌표를 1로 설정합니다.
-        Vector3 spawnPosition = new Vector3(playerPosition.x, 1f, playerPosition.z) + transform.forward * 2f; // Y = 1로 변경
+        Vector3 spawnPosition = new Vector3(playerPosition.x, 1f, playerPosition.z) + transform.forward * 1f; // Y = 1로 변경
 
         // 프리팹을 생성합니다.
         GameObject spawnedPrefab = Instantiate(Candamageobject, spawnPosition, Quaternion.identity);
