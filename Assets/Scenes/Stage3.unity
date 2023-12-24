@@ -2821,6 +2821,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mhpbar: {fileID: 1620226250}
+  enemyob: {fileID: 134050791}
+  nextstageob: {fileID: 0}
+  mmaxHp: 1000
+  mcurHp: 1000
 --- !u!114 &379415371
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6103,6 +6107,7 @@ MonoBehaviour:
   parryObject: {fileID: 6202229744871313214, guid: 7d8582113dc63ff499468aa07ce3d916, type: 3}
   destroyDelay: 0.5
   myCollider: {fileID: 96370050}
+  particle: {fileID: 0}
 --- !u!95 &840594250
 Animator:
   serializedVersion: 5

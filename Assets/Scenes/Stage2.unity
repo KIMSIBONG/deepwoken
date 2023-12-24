@@ -8692,6 +8692,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mhpbar: {fileID: 1228395420}
+  enemyob: {fileID: 304526560}
+  nextstageob: {fileID: 0}
+  mmaxHp: 1000
+  mcurHp: 1000
 --- !u!114 &1177764682
 MonoBehaviour:
   m_ObjectHideFlags: 0
