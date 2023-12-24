@@ -12,6 +12,8 @@ public class PlayerHP : MonoBehaviour
     private float pmaxHp = 100;
     private float pcurHp = 100;
     public static Action php;
+    public static Action php2;
+    public static Action php3;
     private void Awake()
     {
         php = () =>
@@ -19,7 +21,16 @@ public class PlayerHP : MonoBehaviour
             Damagetoplayer(); pHandleHp();
         };
 
+        php2 = () =>
+        {
+            Damagetoplayer1(); pHandleHp();
+        };
+        php3 = () =>
+        {
+            Damagetoplayer2(); pHandleHp();
+        };
     }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -39,7 +50,7 @@ public class PlayerHP : MonoBehaviour
             SceneManager.LoadScene("Stage2");
         }
     }
-    
+
     private void pHandleHp()
     {
         phpbar.value = Mathf.Lerp(phpbar.value, (float)pcurHp / (float)pmaxHp, Time.deltaTime * 10);
@@ -47,5 +58,16 @@ public class PlayerHP : MonoBehaviour
     private void Damagetoplayer()
     {
         pcurHp -= 10;
+    }
+
+    private void Damagetoplayer1()
+    {
+        pcurHp -= 15;
+
+    }
+    private void Damagetoplayer2()
+    {
+        pcurHp -= 20;
+
     }
 }
