@@ -2822,7 +2822,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mhpbar: {fileID: 1620226250}
   enemyob: {fileID: 134050791}
-  nextstageob: {fileID: 0}
+  nextstageob: {fileID: 5607819269926399345, guid: 45e0f06c750176947862c10346226439, type: 3}
   mmaxHp: 1000
   mcurHp: 1000
 --- !u!114 &379415371
