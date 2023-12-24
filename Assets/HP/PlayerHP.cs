@@ -45,10 +45,7 @@ public class PlayerHP : MonoBehaviour
             pcurHp -= 10;
         }
         pHandleHp();
-        if (pcurHp <= 0)
-        {
-            SceneManager.LoadScene("Stage2");
-        }
+        
     }
 
     private void pHandleHp()
@@ -67,7 +64,7 @@ public class PlayerHP : MonoBehaviour
     }
     private void Damagetoplayer2()
     {
-        pcurHp -= 20;
+        pcurHp -= 18;
 
     }
 }

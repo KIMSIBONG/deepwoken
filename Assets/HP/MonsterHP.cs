@@ -9,8 +9,11 @@ public class MonsterHP : MonoBehaviour
     [SerializeField]
     private Slider mhpbar;
 
-    private float mmaxHp = 1000;
-    private float mcurHp = 1000;
+    private bool hasSpawned = false;
+    public Transform enemyob;
+    public GameObject nextstageob; // 소환할 프리팹
+    public float mmaxHp = 1000;
+    public float mcurHp = 1000;
     public static Action mhp;
     private void Awake()
     {
@@ -31,6 +34,12 @@ public class MonsterHP : MonoBehaviour
     {
         
         mHandleHp();
+        if (mcurHp <= 0 && !hasSpawned)
+        {
+            
+            SpawnPrefabAtOtherObjectPosition();
+            Destroy(enemyob);
+        }
     }
 
     private void mHandleHp()
@@ -40,5 +49,17 @@ public class MonsterHP : MonoBehaviour
     private void Damagetomonster()
     {
         mcurHp -= 20;
+    }
+    void SpawnPrefabAtOtherObjectPosition()
+    {
+        // 다른 오브젝트의 위치 가져오기
+        Vector3 otherObjectPosition = enemyob.position;
+
+        // Y축을 1로 설정하여 지면 위에 소환되도록 함
+        otherObjectPosition.y = 1f;
+
+        // 프리팹 소환
+        Instantiate(nextstageob, otherObjectPosition, Quaternion.identity);
+        hasSpawned = true;
     }
 }
