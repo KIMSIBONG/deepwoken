@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class PlayerAnimation : MonoBehaviour
 {
+    PlayerHP playerhp;
     private Animator animator;
     public float clickCooldown = 1f;
     private float lastClickTime; // 마지막 클릭 시간 기록
@@ -111,4 +112,5 @@ public class PlayerAnimation : MonoBehaviour
         // 다른 애니메이션 트리거도 필요에 따라 추가
     }
     
+
 }

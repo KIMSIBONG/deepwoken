@@ -11,8 +11,7 @@ public class PlayerAttack : MonoBehaviour
     public GameObject knockbackEnemy;
     public static Action knock;
     public bool parryCan = false; // 초기값은 true로 설정합니다.
-    public float parryDuration = 0.2f;
-    public float parryTimer = 0f;
+    
     private void Awake()
     {
         knock = () =>
@@ -32,17 +31,10 @@ public class PlayerAttack : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.F))
         {
-            parryCan = true;
-            Debug.Log("parrycan true");
-            parryTimer = parryDuration;
+            
         }
 
-        parryTimer -= Time.deltaTime;
-        if (parryTimer <= 0f)
-        {
-            parryCan = false;
-            Debug.Log("parrycan false");
-        }
+        
     }
 
     private void AttackDamage()

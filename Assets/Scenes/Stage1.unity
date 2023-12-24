@@ -10382,8 +10382,6 @@ MonoBehaviour:
   knockbackForce: 2
   knockbackEnemy: {fileID: 0}
   parryCan: 0
-  parryDuration: 0.2
-  parryTimer: 0
 --- !u!137 &137133149394159798
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
@@ -15337,6 +15335,7 @@ GameObject:
   - component: {fileID: 4459864851492249842}
   - component: {fileID: 4459864851492249843}
   - component: {fileID: 4459864851492249850}
+  - component: {fileID: 4459864851492249851}
   m_Layer: 0
   m_Name: FirstPersonController
   m_TagString: Player
@@ -15358,3 +15357,15 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &4459864851492249851
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4459864851492249849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f123f6aec2850d458c41b62fc9e9ea4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
