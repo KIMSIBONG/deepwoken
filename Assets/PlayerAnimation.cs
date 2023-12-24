@@ -15,6 +15,7 @@ public class PlayerAnimation : MonoBehaviour
     public Collider myCollider; // 외부에서 지정할 오브젝트
     private bool colliderEnabled = true;
     private float disableDuration = 1f;
+    public GameObject particle;
     void Start()
     {
         // Animator 컴포넌트 가져오기
@@ -55,6 +56,7 @@ public class PlayerAnimation : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.F) && colliderEnabled)
             {
                 DisableCollider();
+                SpawnPrefab();
                 StopAllAnimations();
                 
                 animator.SetTrigger("Parrying");
@@ -130,6 +132,17 @@ public class PlayerAnimation : MonoBehaviour
     {
         // 콜라이더 활성화
         myCollider.enabled = true;
+    }
+    void SpawnPrefab()
+    {
+        // 현재 오브젝트의 위치를 가져와서 y 좌표를 1로 설정
+        Vector3 spawnPosition = new Vector3(transform.position.x, 1.3f, transform.position.z);
+
+        // 프리팹을 y 좌표가 1인 위치에 생성
+        GameObject spawnedPrefab = Instantiate(particle, spawnPosition, transform.rotation);
+
+        // 1초 후에 생성된 프리팹 파괴
+        Destroy(spawnedPrefab, 1f);
     }
 
 

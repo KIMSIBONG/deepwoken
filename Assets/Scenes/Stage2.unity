@@ -967,6 +967,50 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.69480145, y: 0.11291133, z: 0.18810649}
     m_Extent: {x: 0.04945013, y: 0.069662854, z: 0.03124097}
   m_DirtyAABB: 0
+--- !u!1 &134050789
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 134050791}
+  - component: {fileID: 134050790}
+  m_Layer: 0
+  m_Name: Manager 2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &134050790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 134050789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1330b52c10b88f449950c1ea2d0b8edc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &134050791
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 134050789}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -11.208564, y: -3.9611473, z: -13.602336}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &134331417
 GameObject:
   m_ObjectHideFlags: 0
@@ -2819,7 +2863,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  speed: 2
+  speed: 3
   atkCooltime: 1
   atkDelay: 3
   MonsterFollow: 0
@@ -8660,6 +8704,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   phpbar: {fileID: 546258384}
+  pmaxHp: 100
+  pcurHp: 100
 --- !u!114 &1177764683
 MonoBehaviour:
   m_ObjectHideFlags: 0

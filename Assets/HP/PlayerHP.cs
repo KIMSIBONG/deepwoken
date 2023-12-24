@@ -9,8 +9,8 @@ public class PlayerHP : MonoBehaviour
     [SerializeField]
     private Slider phpbar;
 
-    private float pmaxHp = 100;
-    private float pcurHp = 100;
+    public float pmaxHp = 100;
+    public float pcurHp = 100;
     public static Action php;
     public static Action php2;
     public static Action php3;
