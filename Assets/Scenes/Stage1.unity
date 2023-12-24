@@ -847,7 +847,7 @@ MonoBehaviour:
   parryCooldown: 2
   parryObject: {fileID: 6202229744871313214, guid: 7d8582113dc63ff499468aa07ce3d916, type: 3}
   destroyDelay: 0.5
-  targetObject: {fileID: 0}
+  myCollider: {fileID: 4459864851492249850}
 --- !u!1 &697002497 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100078, guid: 5a35c5f0a89b9654d897ccd7c8f81bd0, type: 3}
@@ -15336,7 +15336,6 @@ GameObject:
   - component: {fileID: 4459864851492249842}
   - component: {fileID: 4459864851492249843}
   - component: {fileID: 4459864851492249850}
-  - component: {fileID: 4459864851492249851}
   m_Layer: 0
   m_Name: FirstPersonController
   m_TagString: Player
@@ -15358,15 +15357,3 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &4459864851492249851
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4459864851492249849}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6f123f6aec2850d458c41b62fc9e9ea4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

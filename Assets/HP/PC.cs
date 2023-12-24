@@ -1,55 +1,43 @@
 using UnityEngine;
-using System.Collections;
 
 public class PC : MonoBehaviour
 {
-    private Collider colliderComponent;
+    private Collider myCollider;
     private bool colliderEnabled = true;
+    private float disableDuration = 1f;
 
     void Start()
     {
-        colliderComponent = GetComponent<Collider>();
+        // 스크립트가 붙은 오브젝트의 Collider 컴포넌트 가져오기
+        myCollider = GetComponent<Collider>();
 
-        if (colliderComponent == null)
+        if (myCollider == null)
         {
-            Debug.LogError("콜라이더가 없습니다.");
+            Debug.LogError("Collider 컴포넌트를 찾을 수 없습니다.");
         }
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F))
+        // 'F' 키를 누르면 콜라이더를 일시적으로 비활성화
+        if (Input.GetKeyDown(KeyCode.F) && colliderEnabled)
         {
-            ToggleCollider();
+            DisableCollider();
         }
     }
 
-    void ToggleCollider()
+    void DisableCollider()
     {
-        colliderEnabled = !colliderEnabled;
+        // 콜라이더 비활성화
+        myCollider.enabled = false;
 
-        // 콜라이더를 비활성화
-        colliderComponent.enabled = colliderEnabled;
-
-        if (colliderEnabled)
-        {
-            Debug.Log("콜라이더가 활성화되었습니다.");
-        }
-        else
-        {
-            Debug.Log("콜라이더가 비활성화되었습니다.");
-
-            // 1초 후에 ActivateCollider 메서드를 호출하여 콜라이더를 다시 활성화
-            StartCoroutine(ActivateColliderAfterDelay(0.4f));
-        }
+        // 지정된 시간 이후에 콜라이더 다시 활성화
+        Invoke("EnableCollider", disableDuration);
     }
 
-    IEnumerator ActivateColliderAfterDelay(float delay)
+    void EnableCollider()
     {
-        yield return new WaitForSeconds(delay);
-
-        // 콜라이더를 다시 활성화
-        colliderComponent.enabled = true;
-        Debug.Log("콜라이더가 다시 활성화되었습니다.");
+        // 콜라이더 활성화
+        myCollider.enabled = true;
     }
 }
