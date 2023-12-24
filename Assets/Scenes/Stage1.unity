@@ -847,6 +847,7 @@ MonoBehaviour:
   parryCooldown: 2
   parryObject: {fileID: 6202229744871313214, guid: 7d8582113dc63ff499468aa07ce3d916, type: 3}
   destroyDelay: 0.5
+  targetObject: {fileID: 0}
 --- !u!1 &697002497 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100078, guid: 5a35c5f0a89b9654d897ccd7c8f81bd0, type: 3}

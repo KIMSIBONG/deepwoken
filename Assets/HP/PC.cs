@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class PC : MonoBehaviour
 {
@@ -39,12 +40,14 @@ public class PC : MonoBehaviour
             Debug.Log("콜라이더가 비활성화되었습니다.");
 
             // 1초 후에 ActivateCollider 메서드를 호출하여 콜라이더를 다시 활성화
-            Invoke("ActivateCollider", 0.7f);
+            StartCoroutine(ActivateColliderAfterDelay(0.4f));
         }
     }
 
-    void ActivateCollider()
+    IEnumerator ActivateColliderAfterDelay(float delay)
     {
+        yield return new WaitForSeconds(delay);
+
         // 콜라이더를 다시 활성화
         colliderComponent.enabled = true;
         Debug.Log("콜라이더가 다시 활성화되었습니다.");

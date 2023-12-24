@@ -12,11 +12,25 @@ public class PlayerAnimation : MonoBehaviour
     public float parryCooldown = 1f;
     public GameObject parryObject;
     public float destroyDelay = 0.5f;
-   
+    public GameObject targetObject; // 외부에서 지정할 오브젝트
+    private Collider colliderComponent;
+    private bool colliderEnabled = true;
     void Start()
     {
         // Animator 컴포넌트 가져오기
         animator = GetComponent<Animator>();
+        if (targetObject == null)
+        {
+            Debug.LogError("타겟 오브젝트가 지정되지 않았습니다.");
+            return;
+        }
+
+        colliderComponent = targetObject.GetComponent<Collider>();
+
+        if (colliderComponent == null)
+        {
+            Debug.LogError("콜라이더가 없습니다.");
+        }
     }
 
     void Update()
@@ -48,9 +62,10 @@ public class PlayerAnimation : MonoBehaviour
         if (Time.time - lastParryTime >= parryCooldown)
         {   
             if (Input.GetKeyDown(KeyCode.F))
-            {
+            {   
+                ToggleCollider();
                 StopAllAnimations();
-
+                
                 animator.SetTrigger("Parrying");
                 
                 lastParryTime = Time.time;
@@ -111,6 +126,31 @@ public class PlayerAnimation : MonoBehaviour
         animator.ResetTrigger("Walk");
         // 다른 애니메이션 트리거도 필요에 따라 추가
     }
-    
+    void ToggleCollider()
+    {
+        colliderEnabled = !colliderEnabled;
+
+        // 콜라이더를 비활성화
+        colliderComponent.enabled = colliderEnabled;
+
+        if (colliderEnabled)
+        {
+            Debug.Log("콜라이더가 활성화되었습니다.");
+        }
+        else
+        {
+            Debug.Log("콜라이더가 비활성화되었습니다.");
+
+            // 1초 후에 ActivateCollider 메서드를 호출하여 콜라이더를 다시 활성화
+            Invoke("ActivateCollider", 0.7f);
+        }
+    }
+    void ActivateCollider()
+    {
+        // 콜라이더를 다시 활성화
+        colliderComponent.enabled = true;
+        Debug.Log("콜라이더가 다시 활성화되었습니다.");
+    }
+
 
 }
