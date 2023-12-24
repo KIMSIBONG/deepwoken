@@ -4833,6 +4833,7 @@ GameObject:
   - component: {fileID: 8445763112410648400}
   - component: {fileID: 3339390747418099020}
   - component: {fileID: 6408000323595236853}
+  - component: {fileID: 2207705166453967401}
   m_Layer: 0
   m_Name: Portal blue 1
   m_TagString: Untagged
@@ -9707,6 +9708,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f62d6d7839e2b64eb13274339275a48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!136 &2207705166453967401
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5607819269926399345}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5995944143312657410
 GameObject:
   m_ObjectHideFlags: 0
