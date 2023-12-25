@@ -14,7 +14,7 @@ public class PlayerAnimation : MonoBehaviour
     public float destroyDelay = 0.5f;
     public Collider myCollider; // 외부에서 지정할 오브젝트
     private bool colliderEnabled = true;
-    private float disableDuration = 1f;
+    private float disableDuration = 0.4f;
     public GameObject particle;
     void Start()
     {

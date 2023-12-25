@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 4841085432612749316}
   - component: {fileID: 3771076301912849110}
   - component: {fileID: 1381396135718476206}
-  - component: {fileID: 6071031980841783194}
   m_Layer: 0
   m_Name: mAttackObject
   m_TagString: EnemyAttack
@@ -51,7 +50,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7623031976416042196}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -114,16 +113,3 @@ MonoBehaviour:
   knockbackobject: {fileID: 0}
   knockbackForce: 0
   pushForce: 5
-  parryobject: {fileID: 0}
---- !u!114 &6071031980841783194
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7623031976416042196}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 26314cce956f15845940efe7edbe0028, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
