@@ -12,8 +12,8 @@ public class MonsterHP : MonoBehaviour
     private bool hasSpawned = false;
     public Transform enemyob;
     public GameObject nextstageob; // 소환할 프리팹
-    public float mmaxHp = 1000;
-    public float mcurHp = 1000;
+    public float mmaxHp = 700;
+    public float mcurHp = 700;
     public static Action mhp;
     private void Awake()
     {
