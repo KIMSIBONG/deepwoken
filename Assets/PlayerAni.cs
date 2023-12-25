@@ -1,7 +1,7 @@
 using UnityEditor.Animations;
 using UnityEngine;
 
-public class PlayerAnimation : MonoBehaviour
+public class PlayerAni : MonoBehaviour
 {
     PlayerHP playerhp;
     private Animator animator;
