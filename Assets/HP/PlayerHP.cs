@@ -40,10 +40,7 @@ public class PlayerHP : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            pcurHp -= 10;
-        }
+        
         pHandleHp();
         
     }
