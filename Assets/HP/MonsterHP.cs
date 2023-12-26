@@ -14,6 +14,7 @@ public class MonsterHP : MonoBehaviour
     public GameObject nextstageob; // 소환할 프리팹
     public float mmaxHp = 700;
     public float mcurHp = 700;
+    public GameObject mob;
     public static Action mhp;
     private void Awake()
     {
@@ -38,7 +39,7 @@ public class MonsterHP : MonoBehaviour
         {
             
             SpawnPrefabAtOtherObjectPosition();
-            Destroy(enemyob);
+            Destroy(mob);
         }
     }
 

@@ -17159,6 +17159,7 @@ MonoBehaviour:
   nextstageob: {fileID: 5607819269926399345, guid: 84a57938287bf7e4ca7093168121e870, type: 3}
   mmaxHp: 700
   mcurHp: 700
+  mob: {fileID: 304526559}
 --- !u!114 &1177764682
 MonoBehaviour:
   m_ObjectHideFlags: 0
