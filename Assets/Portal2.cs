@@ -23,6 +23,8 @@ public class Portal2 : MonoBehaviour
         {
             // 다음 씬으로 이동
             SceneManager.LoadScene("Finish");
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
         }
     }
 }

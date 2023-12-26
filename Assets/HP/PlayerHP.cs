@@ -40,7 +40,12 @@ public class PlayerHP : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (pcurHp <= 0)
+        {
+            SceneManager.LoadScene("Fail");
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+        }
         pHandleHp();
         
     }
